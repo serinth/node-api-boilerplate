@@ -1,0 +1,58 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -w src --exec \"babel-node src/app.js --presets es2015,stage-0\"",
+    "build": "rm -rf ./dist/* && babel src -s D -d dist --presets es2015",
+    "lint": "eslint src",
+    "start": "node dist/app.js",
+    "test": "./node_modules/.bin/_mocha --compilers js:babel-core/register src/**/*.spec.js",
+    "ci-test-cover": "node_modules/.bin/babel-node node_modules/.bin/isparta cover --include 'src/**/*.js' --excludes 'src/**/*.spec.js' --report html --report text node_modules/mocha/bin/_mocha -- 'src/**/*.spec.js'"
+  },
+  "pre-commit": [
+    "lint",
+    "ci-test-cover"
+  ],
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "ecmaVersion": 7,
+      "sourceType": "module"
+    },
+    "env": {
+      "node": true,
+      "mocha": true
+    },
+    "rules": {
+      "no-console": 0,
+      "no-unused-vars": 1
+    }
+  },
+  "author": "Tony Truong",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
+    "isparta": "^4.0.0",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "pre-commit": "^1.2.2"
+  },
+  "dependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.23.0",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
+    "express": "^4.15.3"
+  }
+}
