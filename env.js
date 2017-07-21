@@ -14,6 +14,9 @@ export default  {
   common: {
     port: 3000,
     bodyLimit: '100kb',
-    corsHeaders: ['Link']
+    corsHeaders: ['Link'],
+    reporting: {
+      maskedRequestFields: ['mobileNumber']
+    }
   }
 };

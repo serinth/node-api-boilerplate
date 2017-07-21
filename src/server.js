@@ -5,6 +5,7 @@ import config, { nodeEnvironment } from './config';
 import health from './api/health';
 import info from './api/info';
 import http from 'http';
+import winstonLogger from './middleware/winstonLogger';
 
 export default function (){
 
@@ -19,6 +20,9 @@ export default function (){
   app.use(bodyParser.json({
     limit : config.common.bodyLimit
   }));
+
+  // internal middleware
+  app.use(winstonLogger);
 
   if(nodeEnvironment !== 'production'){
     /*

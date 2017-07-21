@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "google"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module"
+  },
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+    "no-console": 0,
+    "no-unused-vars": 1,
+    "switch-colon-spacing": 0,
+    "max-len": [0],
+    "require-jsdoc": [0],
+    "comma-dangle": [0],
+    "arrow-parens": ["error", "as-needed"]
+  }
+}
