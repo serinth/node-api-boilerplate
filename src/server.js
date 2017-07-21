@@ -1,14 +1,13 @@
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import config, { nodeEnvironment } from './config';
+import config, {nodeEnvironment} from './config';
 import health from './api/health';
 import info from './api/info';
 import http from 'http';
 import winstonLogger from './middleware/winstonLogger';
 
-export default function (){
-
+export default function() {
   let app = express();
   const server = http.createServer(app);
 
@@ -18,13 +17,13 @@ export default function (){
   }));
 
   app.use(bodyParser.json({
-    limit : config.common.bodyLimit
+    limit: config.common.bodyLimit
   }));
 
   // internal middleware
   app.use(winstonLogger);
 
-  if(nodeEnvironment !== 'production'){
+  if (nodeEnvironment !== 'production') {
     /*
     const devRoutes = {
       '/': ???
@@ -42,6 +41,4 @@ export default function (){
   server.listen(process.env.PORT || config.common.port);
 
   return server;
-
-
 }
