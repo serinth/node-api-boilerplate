@@ -22,13 +22,13 @@ describe('loggingFilter', () => {
         'customers': [
           {
             'countryCode': '+61',
-            'mobileNumber': '447804314',
-            'boardingPassLink': 'https://qantas.com.au/shortener/TOKEN'
+            'mobileNumber': '123456789',
+            'boardingPassLink': 'https://mydomain.com.au/shortener/TOKEN'
           },
           {
             'countryCode': '+61',
             'mobileNumber': '911',
-            'boardingPassLink': 'https://qantas.com.au/shortener/TOKEN2'
+            'boardingPassLink': 'https://mydomain.com.au/shortener/TOKEN2'
           }
         ]
       }
