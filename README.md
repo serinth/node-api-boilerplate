@@ -3,7 +3,7 @@
 Tried to keep this one simple. It has:
 
 - Express with body-parser
-- ES7 and ESLint
+- ES2017 and ESLint
 - iSparta for CI coverage
 - Pre-commit hooks
 - Nodemon for `dev`
@@ -28,6 +28,6 @@ Make sure you have a `dist` folder.
 
 # Health and Info Endpoints
 
-`localhost:3000/api/health`
+`localhost:3000/v1/health`
 
-`localhost:3000/api/info`
+`localhost:3000/v1/info`
