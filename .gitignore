@@ -64,3 +64,6 @@ dist/
 *~
 *.swp
 *.swo
+
+# App specific stuff
+application.log

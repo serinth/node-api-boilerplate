@@ -7,8 +7,8 @@
     "dev": "nodemon -w src --exec \"babel-node src/app.js\"",
     "build": "rm -rf ./dist/* && babel src -s D -d dist",
     "lint": "./node_modules/.bin/eslint src",
-    "start": "node dist/app.js",
-    "test": "./node_modules/.bin/_mocha --compilers js:babel-core/register src/**/*.spec.js",
+    "start": "node -r esm dist/app.js",
+    "test": "./node_modules/.bin/_mocha -r esm src/**/*.spec.js",
     "ci-test-cover": "node_modules/.bin/babel-node node_modules/.bin/isparta cover --include 'src/**/*.js' --excludes 'src/**/*.spec.js' --report html --report text node_modules/mocha/bin/_mocha -- 'src/**/*.spec.js'"
   },
   "pre-commit": [
@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "esm": "^3.2.25",
     "express": "^4.17.1",
     "express-winston": "^4.0.1",
     "lodash": "^4.17.15",
