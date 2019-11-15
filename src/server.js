@@ -9,6 +9,7 @@ import winstonLogger from './middleware/winstonLogger';
 
 export default function() {
   let app = express();
+  const version = 'v1';
   const server = http.createServer(app);
 
   // 3rd party middleware
@@ -34,8 +35,8 @@ export default function() {
   }
 
   // health check and info check for autoscaling
-  app.use('/api/health', health());
-  app.use('/api/info', info());
+  app.use(`/${version}/health`, health());
+  app.use(`/${version}/info`, info());
 
 
   server.listen(process.env.PORT || config.common.port);
