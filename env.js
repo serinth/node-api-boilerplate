@@ -13,6 +13,7 @@ export default  {
   },
   common: {
     port: 3000,
+    apiVersion: 'v1',
     bodyLimit: '100kb',
     corsHeaders: ['Link'],
     reporting: {
