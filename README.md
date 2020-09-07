@@ -12,7 +12,9 @@ Tried to keep this one simple. It has:
 
 # Test Files
 
-Test files should sit with their source and be in teh format `*.spec.js`.
+Test files should sit with their source and be in the format `*.spec.js`.
+
+You can use nock and supertest for integration testing.
 
 # Dev Environment
 

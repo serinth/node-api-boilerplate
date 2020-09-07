@@ -38,7 +38,7 @@ export default function() {
   app.use(`/info`, info());
 
 
-  server.listen(process.env.PORT || config.common.port);
+  const service = server.listen(process.env.PORT || config.common.port);
 
-  return server;
+  return service;
 }
