@@ -1,6 +1,5 @@
 import express from 'express';
 import cors from 'cors';
-import bodyParser from 'body-parser';
 import config, {nodeEnvironment} from './config';
 import health from './api/health';
 import info from './api/info';
@@ -16,7 +15,7 @@ export default function() {
     exposedHeaders: config.common.corsHeaders
   }));
 
-  app.use(bodyParser.json({
+  app.use(express.json({
     limit: config.common.bodyLimit
   }));
 

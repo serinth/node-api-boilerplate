@@ -30,6 +30,6 @@ Make sure you have a `dist` folder.
 
 # Health and Info Endpoints
 
-`localhost:3000/v1/health`
+`localhost:3000/health`
 
-`localhost:3000/v1/info`
+`localhost:3000/info`
